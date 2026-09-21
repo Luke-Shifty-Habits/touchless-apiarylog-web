@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy — Apiary Log</title>
+  <meta name="description" content="Apiary Log keeps your recordings and notes on your phone. It collects no personal data.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="./">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#ffc107" d="M16 2l12 7v14l-12 7-12-7V9z"/><path fill="#0e0e0e" d="M12 11h8v2h-8zm-1 4h10v2H11zm1 4h8v2h-8z"/></svg>
+        Apiary Log
+      </a>
+      <nav class="site">
+        <a href="./#how">How it works</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap doc">
+    <h1>Privacy policy</h1>
+    <p class="muted">Apiary Log for Android (package <code>com.touchless.apiarylog</code>). Effective 21 September 2026.</p>
+
+    <p><strong>In short:</strong> Apiary Log does not collect, send or share any of your data. Your recordings, transcripts and notes are created and kept on your phone. There is no account, no cloud service, no advertising and no analytics.</p>
+
+    <h2>What the app stores, and where</h2>
+    <p>Everything below is stored in the app's private storage on your phone, which other apps cannot read:</p>
+    <ul>
+      <li>Audio recordings of your inspections.</li>
+      <li>Transcripts of those recordings, and any corrections you make.</li>
+      <li>Your apiaries, hives and notes, and your settings.</li>
+      <li>The speech-recognition model, once you download it.</li>
+    </ul>
+    <p>None of it is sent to us or to anyone else. We have no servers that could receive it.</p>
+
+    <h2>Speech recognition happens on your phone</h2>
+    <p>Transcription runs entirely on the device. Your voice is never sent to a speech service, and the app works with no internet connection at all — including in airplane mode.</p>
+
+    <h2>The one time the app uses the internet</h2>
+    <p>When you tap <strong>Download</strong> under Settings → Speech model, the app downloads the speech-recognition model files (about 660 MB) from their public hosts: Hugging Face (<code>huggingface.co</code>) and GitHub (<code>github.com</code>). As with any download, those services can see your device's IP address and the file requested. Nothing about you or your notes is sent. The app uses the internet for nothing else.</p>
+
+    <h2>Exports</h2>
+    <p>You can export your notes as a spreadsheet, or as a ZIP file with the recordings. The app writes the file to a location you choose in Android's own file picker — for example Google Drive, your Downloads folder or a USB drive. What happens to that file afterwards is governed by where you saved it (for example Google's own privacy policy, if you choose Google Drive).</p>
+
+    <h2>Permissions</h2>
+    <table>
+      <thead><tr><th>Permission</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Microphone</td><td>Recording your inspection notes, and hearing a spoken "yes" or "no" after a question. Only while you are recording or answering.</td></tr>
+        <tr><td>Notifications</td><td>Showing that a recording is in progress, with a Stop control, and download progress for the speech model.</td></tr>
+        <tr><td>Foreground service (microphone, data sync)</td><td>Keeping a recording going with the screen off, and letting the speech-model download finish in the background.</td></tr>
+        <tr><td>Internet, network state</td><td>Only for the speech-model download described above, and to warn you if you are on mobile data.</td></tr>
+        <tr><td>Vibration, wake lock</td><td>Buzzing to confirm a recording started or stopped, and keeping the phone awake while it records and files a take.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Deleting your data</h2>
+    <p>Delete a note in the app and it is removed, along with its recording once no other note uses it. Uninstalling the app deletes everything it stored. The app does not use Android's cloud backup, so nothing is left behind on Google's servers.</p>
+
+    <h2>Children</h2>
+    <p>Apiary Log is a tool for beekeepers and is not directed at children. It collects no personal information from anyone.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the new version will be posted on this page with a new effective date.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy: <a href="https://github.com/Luke-Shifty-Habits/touchless-apiarylog-web/issues">open an issue on GitHub</a>.</p>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      Apiary Log · <a href="./">Home</a> · <a href="https://github.com/Luke-Shifty-Habits/touchless-apiarylog-web/issues">Contact</a>
+    </div>
+  </footer>
+</body>
+</html>
