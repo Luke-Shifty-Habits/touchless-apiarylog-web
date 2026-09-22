@@ -162,3 +162,20 @@ footer.site a { color: var(--muted); }
   .doc td { border-bottom: none; padding: 4px 0; }
   .doc tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
 }
+
+.cta {
+  display: inline-block;
+  background: var(--honey);
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 10px;
+}
+.cta:hover { background: #ffd54f; color: var(--ink); }
+a.badge { text-decoration: none; }
+a.badge:hover { color: var(--honey); }
+ul.steps { padding-left: 22px; margin: 0 0 18px; }
+ul.steps li { margin: 0 0 10px; }
+ul.steps li::marker { color: var(--honey); }
