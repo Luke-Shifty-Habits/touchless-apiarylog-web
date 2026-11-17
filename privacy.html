@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy policy — Apiary Log</title>
-  <meta name="description" content="Apiary Log keeps your recordings and notes on your phone. It collects no personal data.">
+  <meta name="description" content="Apiary Log keeps your recordings and notes on your phone. Nothing is sent unless you choose to share voice samples.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
@@ -27,9 +27,9 @@
 
   <main class="wrap doc">
     <h1>Privacy policy</h1>
-    <p class="muted">Apiary Log for Android (package <code>com.touchless.apiarylog</code>). Effective 21 September 2026.</p>
+    <p class="muted">Apiary Log for Android (package <code>com.touchless.apiarylog</code>). Effective 17 November 2026.</p>
 
-    <p><strong>In short:</strong> Apiary Log does not collect, send or share any of your data. Your recordings, transcripts and notes are created and kept on your phone. There is no account, no cloud service, no advertising and no analytics.</p>
+    <p><strong>In short:</strong> Your recordings, transcripts and notes are created and kept on your phone. There is no account, no advertising and no analytics, and we never sell or share your data. The only time anything of yours leaves the phone is if you turn on <strong>voice-sample sharing</strong>, which is off unless you choose it (see below).</p>
 
     <h2>What the app stores, and where</h2>
     <p>Everything below is stored in the app's private storage on your phone, which other apps cannot read:</p>
@@ -39,13 +39,31 @@
       <li>Your apiaries, hives and notes, and your settings.</li>
       <li>The speech-recognition model, once you download it.</li>
     </ul>
-    <p>None of it is sent to us or to anyone else. We have no servers that could receive it.</p>
+    <p>None of it is sent to us or to anyone else, except the voice samples you choose to share.</p>
 
     <h2>Speech recognition happens on your phone</h2>
     <p>Transcription runs entirely on the device. Your voice is never sent to a speech service, and the app works with no internet connection at all — including in airplane mode.</p>
 
-    <h2>The one time the app uses the internet</h2>
-    <p>When you tap <strong>Download</strong> under Settings → Speech model, the app downloads the speech-recognition model files (about 660 MB) from their public hosts: Hugging Face (<code>huggingface.co</code>) and GitHub (<code>github.com</code>). As with any download, those services can see your device's IP address and the file requested. Nothing about you or your notes is sent. The app uses the internet for nothing else.</p>
+    <h2>When the app uses the internet</h2>
+    <p>Recording, transcription, questions and notes never use the internet. The app uses it only for these three things, and each one simply does nothing when you have no reception:</p>
+    <ul>
+      <li><strong>Downloading the speech model.</strong> When you tap <strong>Download</strong> under Settings → Speech model, the app downloads the speech-recognition model files (about 660 MB) from their public hosts: Hugging Face (<code>huggingface.co</code>) and GitHub (<code>github.com</code>). As with any download, those services can see your device's IP address and the file requested. Nothing about you or your notes is sent.</li>
+      <li><strong>Checking for updates.</strong> If you installed the app from Google Play, it asks Google Play whether a newer version is available, using Google Play's own in-app update service. The request is made by Google Play, under <a href="https://policies.google.com/privacy">Google's privacy policy</a>; the app sends nothing of its own.</li>
+      <li><strong>Voice samples, only if you turn them on.</strong> Described in the next section.</li>
+    </ul>
+
+    <h2>Voice samples (optional, off unless you turn it on)</h2>
+    <p>Under Settings → <strong>Help improve recognition</strong> you can choose to share recordings so the app's speech recognition can be improved for beekeepers. It is off by default, and nothing is shared unless you switch it on.</p>
+    <ul>
+      <li><strong>What is sent:</strong> for each take recorded after you switch it on, the audio recording, its transcript and any corrections you made, the time it was recorded, its length, and the app and speech-model versions.</li>
+      <li><strong>What is never sent:</strong> your apiary names, hive numbers or details, inspection stats, or anything else from the app. No name, email or account is attached; each install is identified only by a random anonymous ID.</li>
+      <li><strong>When:</strong> only over Wi-Fi or another unmetered connection, once you have checked the take's notes, or after 7 days if you have not. Takes that were never transcribed, or that you deleted, are not sent.</li>
+      <li><strong>Where:</strong> to Google Cloud Storage, through a Firebase project used only for this app (Firebase Anonymous Authentication and Cloud Storage; no Firebase Analytics or Crashlytics). It may be stored in a data centre outside your country. Google processes it on our behalf under <a href="https://firebase.google.com/support/privacy">Firebase's privacy and security terms</a>.</li>
+      <li><strong>How it is used:</strong> only by us, only to improve and test the app's speech recognition. It is never sold, shared with anyone else, or used for advertising.</li>
+      <li><strong>Stopping and deleting:</strong> switch the setting off and anything still waiting is discarded. <strong>Delete my samples</strong> in the same place removes everything this install has sent. If you have uninstalled the app, email us and we will delete your samples on request (tell us roughly when you recorded them).</li>
+      <li><strong>Retention:</strong> samples are kept until you delete them or until they are no longer needed for improving recognition.</li>
+    </ul>
+    <p>Voice recordings can contain anything said nearby, so please avoid sharing takes where other people can be heard without their agreement.</p>
 
     <h2>Exports</h2>
     <p>You can export your notes as a spreadsheet, or as a ZIP file with the recordings. The app writes the file to a location you choose in Android's own file picker — for example Google Drive, your Downloads folder or a USB drive. What happens to that file afterwards is governed by where you saved it (for example Google's own privacy policy, if you choose Google Drive).</p>
@@ -55,18 +73,20 @@
       <thead><tr><th>Permission</th><th>Why</th></tr></thead>
       <tbody>
         <tr><td>Microphone</td><td>Recording your inspection notes, and hearing a spoken "yes" or "no" after a question. Only while you are recording or answering.</td></tr>
-        <tr><td>Notifications</td><td>Showing that a recording is in progress, with a Stop control, and download progress for the speech model.</td></tr>
-        <tr><td>Foreground service (microphone, data sync)</td><td>Keeping a recording going with the screen off, and letting the speech-model download finish in the background.</td></tr>
-        <tr><td>Internet, network state</td><td>Only for the speech-model download described above, and to warn you if you are on mobile data.</td></tr>
+        <tr><td>Nearby devices (Bluetooth)</td><td>Only if you set up a Bluetooth button: finding and connecting to the button and reading its presses, so it can start and stop recordings. Asked for only on the button set-up screens. It is not used to find your location.</td></tr>
+        <tr><td>Notifications</td><td>Showing that a recording is in progress, with a Stop control, that the Bluetooth button is ready or off, and download progress for the speech model.</td></tr>
+        <tr><td>Foreground service (microphone, connected device, data sync)</td><td>Keeping a recording going with the screen off, keeping a Bluetooth button ready to start a recording, and letting the speech-model download finish in the background.</td></tr>
+        <tr><td>Quick Settings tile</td><td>An optional tile in your phone's quick settings to start and stop a recording.</td></tr>
+        <tr><td>Internet, network state</td><td>Only for the speech-model download, the update check and, if you turn them on, voice samples, as described above; and to warn you if you are on mobile data or to wait for Wi-Fi.</td></tr>
         <tr><td>Vibration, wake lock</td><td>Buzzing to confirm a recording started or stopped, and keeping the phone awake while it records and files a take.</td></tr>
       </tbody>
     </table>
 
     <h2>Deleting your data</h2>
-    <p>Delete a note in the app and it is removed, along with its recording once no other note uses it. Uninstalling the app deletes everything it stored. The app does not use Android's cloud backup, so nothing is left behind on Google's servers.</p>
+    <p>Delete a note in the app and it is removed, along with its recording once no other note uses it. Uninstalling the app deletes everything it stored on your phone. The app does not use Android's cloud backup, so nothing is left behind on Google's servers. Voice samples you chose to share are deleted with <strong>Delete my samples</strong>, or by emailing us, as described above.</p>
 
     <h2>Children</h2>
-    <p>Apiary Log is a tool for beekeepers and is not directed at children. It collects no personal information from anyone.</p>
+    <p>Apiary Log is a tool for beekeepers and is not directed at children. It does not knowingly collect personal information from children.</p>
 
     <h2>Changes</h2>
     <p>If this policy changes, the new version will be posted on this page with a new effective date.</p>
