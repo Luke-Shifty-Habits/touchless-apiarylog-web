@@ -5,4 +5,5 @@ The GitHub Pages site for Apiary Log (hands-free hive notes for beekeepers): a s
 Plain HTML and CSS; no build step. Pages serves the `main` branch root.
 
 - `index.html` — what the app does
+- `terms.html` — terms of service (linked from Play Console)
 - `privacy.html` — privacy policy (keep in step with the app; the app repo is Luke-Shifty-Habits/Touchless-apiary-log)
