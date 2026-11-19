@@ -27,9 +27,9 @@
 
   <main class="wrap doc">
     <h1>Privacy policy</h1>
-    <p class="muted">Apiary Log for Android (package <code>com.touchless.apiarylog</code>). Effective 17 November 2026.</p>
+    <p class="muted">Apiary Log for Android (package <code>com.touchless.apiarylog</code>). Effective 20 November 2026.</p>
 
-    <p><strong>In short:</strong> Your recordings, transcripts and notes are created and kept on your phone. There is no account, no advertising and no analytics, and we never sell or share your data. The only time anything of yours leaves the phone is if you turn on <strong>voice-sample sharing</strong>, which is off unless you choose it (see below).</p>
+    <p><strong>In short:</strong> Your recordings, transcripts and notes are created and kept on your phone. There is no account, no advertising and no analytics, and we never sell or share your data. If the app crashes, a technical crash report is sent so the bug can be fixed; it never contains your notes or recordings, and you can turn it off. The only time anything of yours leaves the phone is if you turn on <strong>voice-sample sharing</strong>, which is off unless you choose it (see below).</p>
 
     <h2>What the app stores, and where</h2>
     <p>Everything below is stored in the app's private storage on your phone, which other apps cannot read:</p>
@@ -45,10 +45,11 @@
     <p>Transcription runs entirely on the device. Your voice is never sent to a speech service, and the app works with no internet connection at all — including in airplane mode.</p>
 
     <h2>When the app uses the internet</h2>
-    <p>Recording, transcription, questions and notes never use the internet. The app uses it only for these three things, and each one simply does nothing when you have no reception:</p>
+    <p>Recording, transcription, questions and notes never use the internet. The app uses it only for these four things, and each one simply does nothing when you have no reception:</p>
     <ul>
       <li><strong>Downloading the speech model.</strong> When you tap <strong>Download</strong> under Settings → Speech model, the app downloads the speech-recognition model files (about 660 MB) from their public hosts: Hugging Face (<code>huggingface.co</code>) and GitHub (<code>github.com</code>). As with any download, those services can see your device's IP address and the file requested. Nothing about you or your notes is sent.</li>
       <li><strong>Checking for updates.</strong> If you installed the app from Google Play, it asks Google Play whether a newer version is available, using Google Play's own in-app update service. The request is made by Google Play, under <a href="https://policies.google.com/privacy">Google's privacy policy</a>; the app sends nothing of its own.</li>
+      <li><strong>Crash reports (on by default, can be turned off).</strong> If the app crashes, a crash report is saved on the phone and sent the next time the app opens with a connection, using Google's <a href="https://firebase.google.com/support/privacy">Firebase Crashlytics</a>. It contains the technical details of the crash (where in the app's code it happened), facts about the device (model, Android version, free memory), the app version, the stage the app was at (for example "recording") and a random installation ID created by Firebase. It <strong>never</strong> contains your notes, transcripts, hive numbers, apiary names or recordings. Reports are used only to find and fix bugs, and are deleted automatically after 90 days. Turn them off in Settings → Advanced → <strong>Send crash reports</strong>.</li>
       <li><strong>Voice samples, only if you turn them on.</strong> Described in the next section.</li>
     </ul>
 
@@ -58,9 +59,9 @@
       <li><strong>What is sent:</strong> for each take recorded after you switch it on, the audio recording, its transcript and any corrections you made, the time it was recorded, its length, and the app and speech-model versions.</li>
       <li><strong>What is never sent:</strong> your apiary names, hive numbers or details, inspection stats, or anything else from the app. No name, email or account is attached; each install is identified only by a random anonymous ID.</li>
       <li><strong>When:</strong> only over Wi-Fi or another unmetered connection, once you have checked the take's notes, or after 7 days if you have not. Takes that were never transcribed, or that you deleted, are not sent.</li>
-      <li><strong>Where:</strong> to Google Cloud Storage, through a Firebase project used only for this app (Firebase Anonymous Authentication and Cloud Storage; no Firebase Analytics or Crashlytics). It may be stored in a data centre outside your country. Google processes it on our behalf under <a href="https://firebase.google.com/support/privacy">Firebase's privacy and security terms</a>.</li>
+      <li><strong>Where:</strong> to Google Cloud Storage, through a Firebase project used only for this app (Firebase Anonymous Authentication and Cloud Storage, plus Crashlytics for the crash reports above; no Firebase Analytics). It may be stored in a data centre outside your country. Google processes it on our behalf under <a href="https://firebase.google.com/support/privacy">Firebase's privacy and security terms</a>.</li>
       <li><strong>How it is used:</strong> only by us, only to improve and test the app's speech recognition. It is never sold, shared with anyone else, or used for advertising.</li>
-      <li><strong>Stopping and deleting:</strong> switch the setting off and anything still waiting is discarded. <strong>Delete my samples</strong> in the same place removes everything this install has sent. If you have uninstalled the app, email us and we will delete your samples on request (tell us roughly when you recorded them).</li>
+      <li><strong>Stopping and deleting:</strong> switch the setting off and anything still waiting is discarded. To delete what was sent, see <a href="#delete">Deleting your Apiary Log data</a>.</li>
       <li><strong>Retention:</strong> samples are kept until you delete them or until they are no longer needed for improving recognition.</li>
     </ul>
     <p>Voice recordings can contain anything said nearby, so please avoid sharing takes where other people can be heard without their agreement.</p>
@@ -82,8 +83,36 @@
       </tbody>
     </table>
 
-    <h2>Deleting your data</h2>
-    <p>Delete a note in the app and it is removed, along with its recording once no other note uses it. Uninstalling the app deletes everything it stored on your phone. The app does not use Android's cloud backup, so nothing is left behind on Google's servers. Voice samples you chose to share are deleted with <strong>Delete my samples</strong>, or by emailing us, as described above.</p>
+    <h2 id="delete">Deleting your Apiary Log data</h2>
+    <p>Apiary Log has no accounts, so there is nothing to sign in to or close. Almost everything is stored only on your phone, and you delete it there.</p>
+
+    <h3>To delete your voice samples</h3>
+    <ol class="steps">
+      <li>Open Apiary Log and go to <strong>Settings</strong>.</li>
+      <li>Under <strong>Help improve recognition</strong>, tap <strong>Delete my samples</strong>, then tap again to confirm.</li>
+      <li>Every sample sent from this install is deleted from our storage straight away. Turn off <strong>Send voice samples</strong> to stop sending new ones.</li>
+    </ol>
+    <p>If you have already uninstalled the app, email <a href="mailto:Shiftyhabits@gmail.com?subject=Apiary%20Log%20sample%20deletion">Shiftyhabits@gmail.com</a> and tell us roughly when you recorded them. Samples carry no name or account, so we will delete those matching the dates you give.</p>
+
+    <h3>To stop crash reports</h3>
+    <ol class="steps">
+      <li>Open Apiary Log and go to <strong>Settings → Advanced</strong>.</li>
+      <li>Turn off <strong>Send crash reports</strong>.</li>
+    </ol>
+
+    <h3>To delete everything on your phone</h3>
+    <p>Delete a note in the app (open it, then <strong>Delete</strong>) and it is removed, along with its recording once no other note uses it. Uninstalling Apiary Log deletes all of its notes, recordings, hives, apiaries, settings and the speech model. The app does not use Android's cloud backup, so no copy is kept anywhere else. Export files you saved yourself are not affected.</p>
+
+    <h3>What is deleted, and what is kept</h3>
+    <table>
+      <thead><tr><th>Data</th><th>Where it is</th><th>When it is deleted</th></tr></thead>
+      <tbody>
+        <tr><td>Recordings, transcripts, notes, hives, apiaries, settings</td><td>Your phone only</td><td>When you delete them in the app, or uninstall it. Nothing is kept.</td></tr>
+        <tr><td>Voice samples (recording and transcripts), if you turned them on</td><td>Google Cloud Storage (Firebase)</td><td>Straight away with <strong>Delete my samples</strong>, or on request by email. Otherwise kept until no longer needed for improving recognition.</td></tr>
+        <tr><td>Crash reports (technical details, device model, Android version, installation ID)</td><td>Google Firebase Crashlytics</td><td>Automatically after 90 days. They contain nothing you said or filed.</td></tr>
+        <tr><td>Export files you saved</td><td>Wherever you saved them</td><td>Not touched by the app. Delete them where you saved them.</td></tr>
+      </tbody>
+    </table>
 
     <h2>Children</h2>
     <p>Apiary Log is a tool for beekeepers and is not directed at children. It does not knowingly collect personal information from children.</p>
